@@ -138,6 +138,7 @@ a:link, a:visited  {
 	background: #f4f5de url(img/main.jpg) no-repeat top left;
 	width: 830px;
 	margin-top: -1px;
+	margin-bottom: 50px;
 	clear: both;
 }
 
@@ -754,7 +755,11 @@ p.flickrrss img:hover  {
 #comments  {
 	padding: 10px 0 0 0;
 	margin: 0 0 0 30px;
+}
+
+div#comments {
 	border-bottom: 1px solid #dfe0c3;
+	padding-bottom:50px;
 }
 
 #comments h3  {
@@ -775,11 +780,12 @@ p.flickrrss img:hover  {
 	margin-top: -16px;
 }
 
-#formsblock .comments   {
+.comments_rss   {
 	background: url(img/icons/rss_comments.png) no-repeat center right;
 	padding: 6px 30px 6px 0;
 	text-decoration: none;
 	line-height: 20px;
+	float: right;
 }
 
 #comments ol  {
@@ -796,8 +802,18 @@ p.flickrrss img:hover  {
 	margin: 5px 0;
 }
 
-#comments ol li.alt  {
+
+.thread-even  {
+	background-color: #D7D8BF;
+}
+
+.thread-odd  {
 	background-color: #e5e6c6;
+}
+
+
+ul>li.even, ul>li.alt {
+	border-left:1px solid #8697A0;
 }
 
 #comments ol li.authorcomment  {
@@ -811,21 +827,18 @@ p.flickrrss img:hover  {
 	padding: 4px 0 4px 10px;
 }
 
-.commentmeta  {
+.comment-meta  {
 	font-size: 11px;
 	
 }
 
-.commentmeta .gravatar  {
-}
-
-.commentmeta .gravatar img  {
+img.avatar  {
 	float: left;
 	margin: 0 10px 0 0;
 	border: 1px solid #ededed;
 }
 
-.commentmeta .commentauthor  {
+.comment-author  {
 	font-size: 14px;
 	font-weight: bold;
 }
@@ -873,6 +886,7 @@ p.flickrrss img:hover  {
 	border: 1px solid #9e9e9e;
 	background-color: #ededed;
 	padding: 5px;
+	float: left;
 }
 
 /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> POST IMAGE ALIGNMENT <<<<<*/
