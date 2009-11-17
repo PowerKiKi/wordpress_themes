@@ -5,6 +5,15 @@
 		<?php $count = 0; ?>
 		
 		<?php if(have_posts()): ?>
+		
+		<?php if(function_exists('wp_pagenavi')) : wp_pagenavi(); else: ?> 
+			
+			<div id="postnav">
+				<?php next_posts_link('<img class="floatl" src="'. get_bloginfo('stylesheet_directory') .'/img/prevpost.jpg" alt="prev posts" />') ?>
+				<?php previous_posts_link('<img class="floatr" src="'. get_bloginfo('stylesheet_directory') .'/img/nextpost.jpg" alt="prev posts" />') ?>
+			</div><!-- /postnav -->
+		<?php endif; ?>
+		
 		<?php while(have_posts()) : the_post();?>
 		
 			<div class="post <?php if($count==0){?>first<?php } ?>" id="post-<?php the_ID(); ?>">
@@ -39,13 +48,12 @@
 		<?php endwhile; ?>
 
 		<?php if(function_exists('wp_pagenavi')) : wp_pagenavi(); else: ?> 
-			<?php endif; ?>
 			
 			<div id="postnav">
-				
 				<?php next_posts_link('<img class="floatl" src="'. get_bloginfo('stylesheet_directory') .'/img/prevpost.jpg" alt="prev posts" />') ?>
 				<?php previous_posts_link('<img class="floatr" src="'. get_bloginfo('stylesheet_directory') .'/img/nextpost.jpg" alt="prev posts" />') ?>
 			</div><!-- /postnav -->
+		<?php endif; ?>
 			
 		
 	
