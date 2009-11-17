@@ -24,6 +24,10 @@
 				
 			</div><!-- /post -->
 			
+			<div id="comments">
+				<?php comments_template(); ?>
+			</div><!--/comments-->	
+			
 			<?php $count++; ?>
 			
 		<?php endwhile; ?>		
