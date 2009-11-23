@@ -133,6 +133,10 @@ a:link, a:visited  {
 
 }
 
+#sidebar {
+	display: none;
+}
+
 #main  {
 	float:left;
 	background: #f4f5de url(img/main.jpg) no-repeat top left;
@@ -146,23 +150,13 @@ a:link, a:visited  {
 	background: #f4f5de url(img/altmain.jpg) no-repeat top left;
 }
 
-#content  {
-	float: left;
-	width: 560px;
-}
 
 #postnav  {
 	position: relative;
 	z-index: 4;
 }
 
-#sidebar  {
-	float: left;
-	width: 270px;
-	margin-bottom: 20px;
-}
-
-#sidebar .subscribe  {
+#main .subscribe  {
 	display: block;
 	height: 0;
 	margin-left: 17px;
@@ -171,6 +165,10 @@ a:link, a:visited  {
 	width: 247px;
 	overflow: hidden;
 	background: url(img/subscribe.jpg) no-repeat top left;
+}
+
+#corner {
+	float: right;
 }
 
 #searchform  {
@@ -183,7 +181,7 @@ a:link, a:visited  {
 	margin-left: 20px;
 }
 
-#sidebar #searchform .text  {
+#searchform .text  {
 	border: 1px solid #ebecd5;
 	height: 22px;
 	width: 195px;
@@ -191,7 +189,7 @@ a:link, a:visited  {
 	color: #777;
 }
 
-#sidebar #searchform .submit  {
+#searchform .submit  {
 	margin-bottom: -9px;
 }
 
@@ -574,7 +572,7 @@ h3.cathead  {
 	list-style: none;
 }
 
-.widget ul li a:link, #sidebar .widget ul li a:visited  {
+.widget ul li a:link {
 	color: #6a6a6a;
 	text-decoration: none;
 }

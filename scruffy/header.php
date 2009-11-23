@@ -44,7 +44,9 @@
 		
 		<div id="nav">
 			<ul>
-				<li class="first <?php if (is_home()){ ?>current_page_item<?php ;} ?>"><a href="<?php bloginfo('home'); ?>" title="Home">Home</a></li>
+				<li class="first <?php if (is_home()){ ?>current_page_item<?php ;} ?>"><a href="<?php bloginfo('home'); ?>" title="Home">Home</a>
+				
+<?php get_sidebar(); ?></li>
 				<?php wp_list_pages('title_li=&depth=1'); ?>
 			</ul>
 		</div><!-- /nav -->

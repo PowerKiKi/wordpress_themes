@@ -1,48 +1,80 @@
-		<div id="sidebar">
+<?php
+/**
+ * @package WordPress
+ * @subpackage Default_Theme
+ */
+?>
+	<div id="sidebar" role="complementary">
+		<ul>
+			<?php 	/* Widgetized sidebar, if you have the plugin installed. */
+					if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar() ) : ?>
 			
-			<a class="subscribe" href="<?php bloginfo('rss2_url'); ?>" title="Posts RSS">Subscribe</a>
-			
-			<?php include(TEMPLATEPATH.'/searchform.php')?>
-			
-			<div id="widgets">
-			
-				<?php if (function_exists('dynamic_sidebar')&&dynamic_sidebar()):else: ?>
-			
-				<div class="widget">
-				
-					<h3>Categories</h3>
-				
-					<ul>
-						<?php wp_list_categories('title_li=&show_count=1'); ?>					
-					</ul>
-					
-					<div class="widgetbottom"></div>
-				</div><!-- /widget -->
-				
-				<div class="widget">
-				
-					<h3>Archives</h3>
-				
-					<ul>
-						<?php wp_get_archives('type=monthly&limit=&format=html&before=&after=&show_post_count=1'); ?>			
-					</ul>
-					
-					<div class="widgetbottom"></div>
-				</div><!-- /widget -->
-				
-				<div class="widget">
-				
-					<h3>Links</h3>
-				
-					<ul>
-						<?php wp_list_bookmarks('title_before=<h4>&title_after=</h4>'); ?>					
-					</ul>
-					
-					<div class="widgetbottom"></div>
-				</div><!-- /widget -->
-			
-				<?php endif; ?>
-			
-			</div><!-- /widgets -->
-			
-		</div><!-- /sidebar -->
+			<!-- Author information is disabled per default. Uncomment and fill in your details if you want to use it.
+			<li><h2>Author</h2>
+			<p>A little something about you, the author. Nothing lengthy, just an overview.</p>
+			</li>
+			-->
+
+			<?php if ( is_404() || is_category() || is_day() || is_month() ||
+						is_year() || is_search() || is_paged() ) {
+			?> <li>
+
+			<?php /* If this is a 404 page */ if (is_404()) { ?>
+			<?php /* If this is a category archive */ } elseif (is_category()) { ?>
+			<p>You are currently browsing the archives for the <?php single_cat_title(''); ?> category.</p>
+
+			<?php /* If this is a yearly archive */ } elseif (is_day()) { ?>
+			<p>You are currently browsing the <a href="<?php bloginfo('url'); ?>/"><?php echo bloginfo('name'); ?></a> blog archives
+			for the day <?php the_time('l, F jS, Y'); ?>.</p>
+
+			<?php /* If this is a monthly archive */ } elseif (is_month()) { ?>
+			<p>You are currently browsing the <a href="<?php bloginfo('url'); ?>/"><?php echo bloginfo('name'); ?></a> blog archives
+			for <?php the_time('F, Y'); ?>.</p>
+
+			<?php /* If this is a yearly archive */ } elseif (is_year()) { ?>
+			<p>You are currently browsing the <a href="<?php bloginfo('url'); ?>/"><?php echo bloginfo('name'); ?></a> blog archives
+			for the year <?php the_time('Y'); ?>.</p>
+
+			<?php /* If this is a monthly archive */ } elseif (is_search()) { ?>
+			<p>You have searched the <a href="<?php echo bloginfo('url'); ?>/"><?php echo bloginfo('name'); ?></a> blog archives
+			for <strong>'<?php the_search_query(); ?>'</strong>. If you are unable to find anything in these search results, you can try one of these links.</p>
+
+			<?php /* If this is a monthly archive */ } elseif (isset($_GET['paged']) && !empty($_GET['paged'])) { ?>
+			<p>You are currently browsing the <a href="<?php echo bloginfo('url'); ?>/"><?php echo bloginfo('name'); ?></a> blog archives.</p>
+
+			<?php } ?>
+
+			</li>
+		<?php }?>
+		</ul>
+		<ul role="navigation">
+			<?php wp_list_pages('title_li=<h2>Pages</h2>' ); ?>
+
+			<li><h2>Archives</h2>
+				<ul>
+				<?php wp_get_archives('type=monthly'); ?>
+				</ul>
+			</li>
+
+			<?php wp_list_categories('show_count=1&title_li=<h2>Categories</h2>'); ?>
+		</ul>
+		<ul>
+			<?php /* If this is the frontpage */ if ( is_home() || is_page() ) { ?>
+				<?php wp_list_bookmarks(); ?>
+
+				<li><h2>Meta</h2>
+				<ul>
+					<?php wp_register(); ?>
+					<li><?php wp_loginout(); ?></li>
+					<li><a href="http://validator.w3.org/check/referer" title="This page validates as XHTML 1.0 Transitional">Valid <abbr title="eXtensible HyperText Markup Language">XHTML</abbr></a></li>
+					<li><a href="http://gmpg.org/xfn/"><abbr title="XHTML Friends Network">XFN</abbr></a></li>
+					<li><a href="http://wordpress.org/" title="Powered by WordPress, state-of-the-art semantic personal publishing platform.">WordPress</a></li>
+					<?php wp_meta(); ?>
+				</ul>
+				</li>
+			<?php } ?>
+
+			<?php endif; ?>
+		</ul>
+	</div>
+

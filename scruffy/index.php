@@ -1,11 +1,13 @@
 <?php get_header(); ?>
 
-		<div id="content">
-		
 		<?php $count = 0; ?>
-		
 		<?php if(have_posts()): ?>
-		
+
+		<div id="corner">
+			<a class="subscribe" href="<?php bloginfo('rss2_url'); ?>" title="Posts RSS">Subscribe</a>
+			<?php get_search_form(); ?>
+		</div>
+			
 		<?php if(function_exists('wp_pagenavi')) : wp_pagenavi(); else: ?> 
 			
 			<div id="postnav">
@@ -13,6 +15,10 @@
 				<?php previous_posts_link('<img class="floatr" src="'. get_bloginfo('stylesheet_directory') .'/img/nextpost.jpg" alt="prev posts" />') ?>
 			</div><!-- /postnav -->
 		<?php endif; ?>
+		
+			
+		
+		<div id="content">
 		
 		<?php while(have_posts()) : the_post();?>
 		
@@ -54,19 +60,16 @@
 				<?php previous_posts_link('<img class="floatr" src="'. get_bloginfo('stylesheet_directory') .'/img/nextpost.jpg" alt="prev posts" />') ?>
 			</div><!-- /postnav -->
 		<?php endif; ?>
+		</div><!-- /content -->
 			
 		
 	
 		<?php else: ?>
-	
-			<div class="post">
-				<h2><?php _e('Not Found'); ?></h2>
-			</div><!-- /post -->
-	
+			<div id="content">		
+				<div class="post">
+					<h2><?php _e('Not Found'); ?></h2>
+				</div><!-- /post -->
+			</div><!-- /content -->
 		<?php endif; ?>
-	
-		</div><!-- /content -->
 		
-<?php get_sidebar() ?>
-
 <?php get_footer(); ?>
