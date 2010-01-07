@@ -66,6 +66,10 @@ a:link, a:visited  {
 	color: #8697a0;
 }
 
+a:hover {
+	color: #000000;
+}
+
 #nav ul  {
 	margin: 3px 0 0 0;
 	padding: 0 0 0 18px;
@@ -577,7 +581,7 @@ h3.cathead  {
 }
 
 .widget ul li a:link {
-	color: #6a6a6a;
+	//color: #6a6a6a;
 	text-decoration: none;
 }
 
@@ -983,3 +987,31 @@ img.wp-smiley  {
 {
 	display: block;
 }
+
+#qtranslate-3
+{
+	background: none;
+	border: none;
+    float: right;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    width: auto;
+}
+
+#qtranslate-3-chooser li
+{
+	display: inline;
+	margin-right:20px;
+}
+
+
+#qtranslate-3 a:visited{
+	text-decoration:none;
+}
+
+#qtranslate-3 a:hover  {
+	color: #000000;
+	text-decoration: underline;
+}
+

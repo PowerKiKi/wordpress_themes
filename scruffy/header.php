@@ -39,18 +39,17 @@
 <div id="container">
 
 	<div id="head">
-		
-		<h1><a href="<?php bloginfo('home'); ?>" title="Home"><?php bloginfo('name'); ?></a></h1>
+		<h1><a href="<?php echo get_option('home'); ?>" title="Home"><?php bloginfo('name'); ?></a></h1>
 		
 		<div id="nav">
 			<ul>
-				<li class="first <?php if (is_home()){ ?>current_page_item<?php ;} ?>"><a href="<?php bloginfo('home'); ?>" title="Home">Home</a>
+				<li class="first <?php if (is_home()){ ?>current_page_item<?php ;} ?>"><a href="<?php echo get_option('home'); ?>" title="Home">Home</a>
 				
 <?php get_sidebar(); ?></li>
 				<?php wp_list_pages('title_li=&depth=1'); ?>
 			</ul>
 		</div><!-- /nav -->
-		
+			<?php  dynamic_sidebar('languageBar'); ?>
 	</div><!-- /head -->
 
 
