@@ -8,7 +8,12 @@ if ( function_exists('register_sidebar') )
         'after_title' => '</h3>',
     ));
     
-    register_sidebar(array('name' => 'languageBar',
+    register_sidebar(array(
+    	'name' => 'languageBar',
+	    'before_widget' => '',
+	    'after_widget'  => '',
+	    'before_title'  => '',
+	    'after_title'   => '',
     ));
     
 }

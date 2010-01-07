@@ -49,7 +49,7 @@
 				<?php wp_list_pages('title_li=&depth=1'); ?>
 			</ul>
 		</div><!-- /nav -->
-			<?php  dynamic_sidebar('languageBar'); ?>
+		<div id="languageBar"><?php  dynamic_sidebar('languageBar'); ?></div>
 	</div><!-- /head -->
 
 

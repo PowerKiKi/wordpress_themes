@@ -988,7 +988,7 @@ img.wp-smiley  {
 	display: block;
 }
 
-#qtranslate-3
+#languageBar
 {
 	background: none;
 	border: none;
@@ -1002,15 +1002,19 @@ img.wp-smiley  {
 #qtranslate-3-chooser li
 {
 	display: inline;
-	margin-right:20px;
+	margin-right:15px;
+	list-style-image:none;
+	list-style-position:outside;
+	list-style-type:none;
 }
 
-
-#qtranslate-3 a:visited{
+#languageBar a, #languageBar a:visited
+{
 	text-decoration:none;
 }
 
-#qtranslate-3 a:hover  {
+#languageBar a:hover
+{
 	color: #000000;
 	text-decoration: underline;
 }
