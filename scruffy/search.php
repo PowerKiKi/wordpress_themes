@@ -31,9 +31,6 @@
 					
 				</div><!-- /entry -->
 				
-				<div class="postbottom">
-				</div>
-				
 			</div><!-- /post -->
 			
 			<?php $count++; ?>

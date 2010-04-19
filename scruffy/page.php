@@ -19,9 +19,6 @@
 					
 				</div><!-- /entry -->
 				
-				<div class="postbottom">
-				</div>
-				
 			</div><!-- /post -->
 			
 			<div id="comments">

@@ -118,6 +118,8 @@ a:hover {
 
 #content{
 	padding-right:30px;
+	margin-top: 0px;
+	margin-bottom: 0px;
 }
 
 #head  {
@@ -150,7 +152,6 @@ a:hover {
 	background: #f4f5de url(img/main.jpg) no-repeat top left;
 	width: 830px;
 	margin-top: -1px;
-	margin-bottom: 50px;
 	clear: both;
 }
 
@@ -203,28 +204,23 @@ a:hover {
 
 #footer  {
 	
+	font-size: 10px;
 	float:left;
 	width: 830px;
-	margin-top: -1px;
-	margin-bottom: 50px;
 	clear: both;
-	
+	margin-top: 0px;
+	margin-bottom: 0px;
 	height: 186px;
 	width: 830px;
-	margin-top: -50px;
 	background: url(img/footer.jpg) no-repeat bottom center;
 }
 
 #footer p  {
-	position: absolute;
-	bottom: 0;
-	left: 100px;
 	color: #999;
+	padding-top:120px;
+	margin-left:1em;
 }
 
-*html #footer  {
-	margin: -100px 0 0 0;
-}
 
 /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> POST AND ENTRY <<<<<*/
 
@@ -254,17 +250,6 @@ h3.cathead  {
 
 .first  {
 	background-image: none;
-}
-
-.postbottom  {
-	background: url(img/postbottom.jpg) no-repeat 0% 100%;
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	height: 200px;
-	width: 400px;
-	z-index: -5;
-	margin-top: -170px;
 }
 
 .post .comments  {

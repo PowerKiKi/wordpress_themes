@@ -30,10 +30,6 @@
 					<p class="tags"><?php the_tags('', ', ', '<br />'); ?></p>
 					
 				</div><!-- /entry -->
-				
-				<div class="postbottom">
-				</div>
-				
 			</div><!-- /post -->
 			
 			<div id="comments">
