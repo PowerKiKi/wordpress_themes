@@ -202,14 +202,15 @@ a:hover {
 }
 
 #footer  {
-	position: relative;
-	z-index: 0;
-	float: left;
-	margin: 0 auto;
+	
+	float:left;
+	width: 830px;
+	margin-top: -1px;
+	margin-bottom: 50px;
+	clear: both;
+	
 	height: 186px;
 	width: 830px;
-	padding: 0 80px;
-	margin-left: -80px;
 	margin-top: -50px;
 	background: url(img/footer.jpg) no-repeat bottom center;
 }
@@ -236,7 +237,6 @@ h3.cathead  {
 }
 
 .post  {
-	position: relative;
 	z-index: 5;
 	background: url(img/posttop.jpg) no-repeat top left;
 	padding: 18px 10px 30px 35px;
@@ -268,29 +268,24 @@ h3.cathead  {
 }
 
 .post .comments  {
-	position: absolute;
-	top: 27px;
-	left: -22px;
-	color: #000;
-	text-decoration: none;
-	background: url(img/comments.jpg) no-repeat center center;
-	display: block;
-	padding: 1px 21px 9px 21px;
-	font-family: Georgia, Times, serif;
-	font-size: 36px;
+	background:transparent url(img/comments.jpg) no-repeat scroll center center;
+	clear:none;
+	color:#000000;
+	display:inline-block;
+	font-family:Georgia,Times,serif;
+	font-size:36px;
+	left:-55px;
+	position:relative;
+	text-align:center;
+	text-decoration:none;
+	top:0;
+	width: 60px;
+	height: 60px;
 }
 
 .post .comments a:link, .post .comments a:visited  {
 	text-decoration: none;
 	color: #000!important;
-}
-
-*html .post .comments  {
-	left: -66px;
-}
-
-.first .comments  {
-	top: 53px;
 }
 
 .post .postmetadata  {
@@ -333,14 +328,13 @@ h3.cathead  {
 	text-decoration: none;
 }
 
-.first h2.title  {
-	width: 428px;
-}
-
 .post h2.title  {
 	color: #5a5a5a;
 	margin: 12px 0 7px 10px;
 	line-height: 42px;
+	display: inline-block;
+	left:-55px;
+	position:relative;
 }
 
 .post h2.title a:link, .post h2.title a:visited  {
