@@ -24,12 +24,12 @@
 		
 			<div class="post <?php if($count==0){?>first<?php } ?>" id="post-<?php the_ID(); ?>">
 				
-				<h2 class="title"><a href="<?php the_permalink(); ?>#content" title="Permalink to <?php the_title(); ?>"><?php the_title(); ?></a></h2>
+				<span class="comments"><?php comments_popup_link('0', '1', '%'); ?></span><h2 class="title"><a href="<?php the_permalink(); ?>#content" title="Permalink to <?php the_title(); ?>"><?php the_title(); ?></a></h2>
 				
 				<p class="postmetadata">
 					<span class="date"><?php the_time('d F Y') ;?></span>
 					<span class="author"><?php _e('By'); ?> <?php  the_author_posts_link(); ?></span>
-					<span class="comments"><?php comments_popup_link('0', '1', '%'); ?></span>
+					
 					<span class="category"><?php _e('In'); ?> <?php the_category(', ') ?></span>
 					<?php edit_post_link('Edit', '<span class="edit">', '</span>'); ?>
 				</p>
