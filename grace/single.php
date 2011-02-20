@@ -55,7 +55,6 @@
 	
 	  <h1 class="single"><?php the_title(); ?></h1>
 	  
-	  <h2 class="meta">Description</h2>
 	  <p><?php the_content(); ?></p>
 	
 	  <div id="commentsform"> <!-- commentsform -->
