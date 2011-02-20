@@ -13,18 +13,17 @@
 
 <script type="text/javascript" src="<?php bloginfo('stylesheet_directory'); ?>/scripts/jquery-1.3.2.js"></script> 
 <script type="text/javascript" src="<?php bloginfo('stylesheet_directory'); ?>/scripts/chili-1.7.pack.js"></script> 
-<script type="text/javascript" src="<?php bloginfo('stylesheet_directory'); ?>/scripts/jquery.cycle.all.js"></script> 
+<script type="text/javascript" src="<?php bloginfo('stylesheet_directory'); ?>/scripts/jquery.cycle.all.min.js"></script> 
 <script type="text/javascript" src="<?php bloginfo('stylesheet_directory'); ?>/scripts/jquery.easing.1.2.js"></script> 
 
 <?php $theme_options = get_option('Grace'); ?>
 
 
+
+<script type="text/javascript"> 
 <?php if ( !is_single() ) : ?> 
 
 <?php if (!isset($theme_options["galleryspeed"]) || $theme_options["galleryspeed"] == "default") { $speed = 4000; } else if (!isset($theme_options["galleryspeed"]) || $theme_options["galleryspeed"] == "fast") { $speed = 2000; } else if (!isset($theme_options["galleryspeed"]) || $theme_options["galleryspeed"] == "slow") { $speed = 8000; } ?>
- 
-<script type="text/javascript"> 
- 
 $(function() {
     $('#feature').cycle({
         speed:       1000,
@@ -32,9 +31,19 @@ $(function() {
     });
 });
  
-</script> 
-
+<?php else: ?>
+$(function() {
+    $('#feature').cycle({
+        timeout:     0,
+        pagerEvent: 'mouseenter',
+        pagerAnchorBuilder: function(idx, slide) { 
+            // return selector string for existing anchor 
+            return '#content>div.gallery a:eq(' + idx + ')'; 
+        } 
+    });
+});
 <?php endif; ?>
+</script> 
 
 <?php if ( is_singular() ) wp_enqueue_script( 'comment-reply' ); ?>
 <?php wp_head(); ?>

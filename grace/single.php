@@ -3,24 +3,26 @@
 	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
   
     <div id="feature" class="singlepic">  <!-- feature -->
-
-		<?php 
-		
-		$post_id = $post->ID;
-		$single = true;
-							
-		$key = image;
-		if ( $image_value = get_post_meta($post_id, $key, $single) ) :
-		
-		echo '<img src="'.$image_value.'" alt="'.the_title('','',False).'" />';		
-				
-		endif; // End the Featured loop
-
-	?>
-	  
-	  <div class="clearall">&nbsp;</div>
-	
+		<?php  
+		// Dump all images from gallery in original size
+		$attachments = get_children( array('post_parent' => $post->ID, 'post_status' => 'inherit', 'post_type' => 'attachment', 'post_mime_type' => 'image', 'order' => 'ASC', 'orderby' => 'menu_order ID') );
+		foreach ($attachments as $image)
+		{
+			$img = wp_get_attachment_image($image->ID, 'original', false, array('id' => 'attachment_' . $image->post_name));
+			echo $img . "\n";
+		}
+		?>
 	</div> <!-- feature -->
+	  <div class="clearall">&nbsp;</div>
+	<?php
+	
+	// Dump the image gallery which will be used as navigation control of feature image
+	echo gallery_shortcode(array(
+		'columns'    => 9,
+		'size'       => 'thumbnail',
+	));
+	?>
+	  <div class="clearall">&nbsp;</div>
 	
 	<div id="columnleft"> <!-- columnleft -->
 	
