@@ -235,7 +235,6 @@ body {
 }
 
 #feature.singlepic, #pagecontent {
-	margin-bottom: 50px;
 	overflow: hidden;
 }
 
@@ -244,11 +243,13 @@ body {
 }
 
 #columnleft {
+	margin-top: 50px;
 	float: left;
 	width: 250px;
 }
 
 #columnright {
+	margin-top: 50px;
 	float: left;
 	margin-left: 50px;
 	width: 600px;
