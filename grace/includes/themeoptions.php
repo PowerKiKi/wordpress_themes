@@ -39,16 +39,6 @@ class Panel {
 ?>
 
 <div class="wrap">
-<script>
-    function fieldSwitch(switcher,target) {
-        if (document.getElementById(switcher).checked==true) {
-            document.getElementById(target).disabled=false;
-        }
-        else {
-            document.getElementById(target).disabled=true;
-        }
-    }
-</script>
 <h2>Grace Theme Options</h2>
 <form action="" method="post" class="themeform" name="Form" id="Form">
     <input type="hidden" id="act1" name="act1" value="save">
