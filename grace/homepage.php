@@ -16,19 +16,17 @@ get_header(); ?>
 
 	  	if (have_posts()) : while (have_posts()) : the_post(); // Start the Featured loop
 		
-		$post_id = $post->ID;
-		$single = true;
-							
-		$key = image;
-		if ( $image_value = get_post_meta($post_id, $key, $single) ) :
+			$attachments = get_children( array('post_parent' => $post->ID, 'post_status' => 'inherit', 'post_type' => 'attachment', 'post_mime_type' => 'image', 'order' => 'ASC', 'orderby' => 'menu_order ID') );
+			foreach ($attachments as $image)
+			{
+				$img = wp_get_attachment_image($image->ID, 'original', false, array('id' => 'attachment_' . $image->post_name, 'title' => the_title_attribute(array('echo' => false))));
+				?>
+					<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php echo $img; ?></a>
+				<?php 
+				break;
+			}
 		
-		?>
-		
-		<a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><img src="<?php echo $image_value; ?>" alt="<?php the_title(); ?>" /></a>
-		
-		<?php
-		
-		endif; endwhile; endif; // End the Featured loop
+		endwhile; endif; // End the Featured loop
 
 	?>
 	
