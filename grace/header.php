@@ -52,7 +52,7 @@ $(function() {
 
 <div id="header"> <!-- header -->
   <div id="logo">
-    <a href="<?php echo get_option('home'); ?>/" title="<?php bloginfo('name'); ?> - <?php bloginfo('description'); ?>"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/zkp-logo.png" /></a>  
+    <a href="<?php echo get_option('home'); ?>/" title="<?php bloginfo('name'); ?> - <?php bloginfo('description'); ?>"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/logo.png" /></a>  
   </div>
   <div id="blogTitle">
   	<h1><a href="<?php echo get_option('home'); ?>/" title="<?php bloginfo('name'); ?> - <?php bloginfo('description'); ?>"><?php bloginfo('name'); ?></a></h1>
