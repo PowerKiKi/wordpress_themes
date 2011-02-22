@@ -48,13 +48,7 @@
 	  
 	  <ul id="latestworkgallery">
 
-		<?php $theme_options = get_option('Grace'); ?>
-		<?php if (!isset($theme_options["autothumb"]) || $theme_options["autothumb"] == "timthumbon") { 
-		    include (TEMPLATEPATH . '/includes/autothumbson.php'); 
-		    } 
-		    else if (!isset($theme_options["autothumb"]) || $theme_options["autothumb"] == "timthumboff") { 
-		        include (TEMPLATEPATH . '/includes/autothumbsoff.php'); 
-		} ?>
+		<?php include(TEMPLATEPATH . '/includes/thumb.php'); ?>
 	  
 	  </ul>
 

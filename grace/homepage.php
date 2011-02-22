@@ -16,15 +16,11 @@ get_header(); ?>
 
 	  	if (have_posts()) : while (have_posts()) : the_post(); // Start the Featured loop
 		
-			$attachments = get_children( array('post_parent' => $post->ID, 'post_status' => 'inherit', 'post_type' => 'attachment', 'post_mime_type' => 'image', 'order' => 'ASC', 'orderby' => 'menu_order ID') );
-			foreach ($attachments as $image)
-			{
-				$img = wp_get_attachment_image($image->ID, 'original', false, array('id' => 'attachment_' . $image->post_name, 'title' => the_title_attribute(array('echo' => false))));
-				?>
-					<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php echo $img; ?></a>
-				<?php 
-				break;
-			}
+			$image = grace_get_featured_image($post);
+			$imageTag = wp_get_attachment_image($image->ID, 'original', false, array('id' => 'attachment_' . $image->post_name, 'title' => the_title_attribute(array('echo' => false))));
+			?>
+			<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php echo $imageTag; ?></a>
+			<?php
 		
 		endwhile; endif; // End the Featured loop
 
@@ -53,14 +49,8 @@ get_header(); ?>
 	  <h2>Latest Photos</h2>
 	  
 	  <ul id="latestworkgallery">				
-				
-		<?php $theme_options = get_option('Grace'); ?>
-		<?php if (!isset($theme_options["autothumb"]) || $theme_options["autothumb"] == "timthumbon") { 
-		    include (TEMPLATEPATH . '/includes/hpautothumbson.php'); 
-		    } 
-		    else if (!isset($theme_options["autothumb"]) || $theme_options["autothumb"] == "timthumboff") { 
-		        include (TEMPLATEPATH . '/includes/hpautothumbsoff.php'); 
-		} ?>				
+	  
+			<?php include(TEMPLATEPATH . '/includes/hpthumbs.php'); ?>
 	  
 	  </ul>
 

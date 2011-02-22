@@ -23,5 +23,13 @@ if ( function_exists('register_sidebar') )
 	 ));		 
 }		 
 
+if ( !function_exists('grace_get_featured_image') )
+{
+	function grace_get_featured_image($post)
+	{
+			$attachments = get_children( array('post_parent' => $post->ID, 'post_status' => 'inherit', 'post_type' => 'attachment', 'post_mime_type' => 'image', 'order' => 'ASC', 'orderby' => 'menu_order ID') );
+			return reset($attachments);
+	} 
+}
 
 ?>

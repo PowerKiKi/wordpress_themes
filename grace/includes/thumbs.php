@@ -1,6 +1,4 @@
 			<?php
-			
-			query_posts('showposts=6'); // retrieve the 6 most recent or stickiest posts			
 
 			$i = 1; // set variable used to control which style is applied to thumbnail
 
@@ -14,9 +12,19 @@
 			
 			$post_id = $post->ID;
 			$single = true;
-							
-			$key = thumbnail;
-			$thumbnail_value = get_post_meta($post_id, $key, $single);
+
+			
+			$image = grace_get_featured_image($post);
+			$theme_options = get_option('Grace'); 
+			if (true ||!isset($theme_options["autothumb"]) || $theme_options["autothumb"] == "timthumbon")
+			{
+				$info = wp_get_attachment_image_src($image->ID, 'original');
+				$thumbnail_value = '<img src="' . get_bloginfo('template_directory') . '/scripts/timthumb.php?src=' . $info[0] . '&w=280&h=140&zc=1" title="' . get_the_title() . '" alt="' . get_the_title() . '" />';
+			}
+			else 
+			{
+				$thumbnail_value = wp_get_attachment_image($image->ID, 'medium', false, array('alt' => get_the_title(), 'title' => get_the_title()));
+			}
 			
 			if ( $thumbnail_value ) : // retreive thumbnail custom field value 
 			 
@@ -24,7 +32,7 @@
 
 				<li<?php echo $c ?>>
 				  <a href="<?php the_permalink() ?>">
-				    <img src="<?php echo $thumbnail_value; ?>" alt="<?php the_title('','',False); ?> "/> 
+				    <?php echo $thumbnail_value; ?> 
 				  </a>
 				</li>
 
