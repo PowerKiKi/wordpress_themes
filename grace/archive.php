@@ -48,7 +48,7 @@
 	  
 	  <ul id="latestworkgallery">
 
-		<?php include(TEMPLATEPATH . '/includes/thumb.php'); ?>
+		<?php include(TEMPLATEPATH . '/includes/thumbs.php'); ?>
 	  
 	  </ul>
 

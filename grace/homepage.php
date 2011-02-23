@@ -40,6 +40,10 @@ get_header(); ?>
 				</li>
 			
 			<?php endif; ?>
+			<li>
+				<p><a class="rss" href="<?php bloginfo('rss2_url'); ?>" title="<?php echo esc_attr(__('Syndicate this site using RSS 2.0')); ?>"><?php _e('Entries <abbr title="Really Simple Syndication">RSS</abbr>'); ?></a> <br/>
+				<a class="rss" href="<?php bloginfo('comments_rss2_url'); ?>" title="<?php echo esc_attr(__('The latest comments to all posts in RSS')); ?>"><?php _e('Comments <abbr title="Really Simple Syndication">RSS</abbr>'); ?></a></p>
+			
 			</ul>
 	
 	</div> <!-- columnleft -->
