@@ -14,13 +14,18 @@
 <script type="text/javascript" src="<?php bloginfo('stylesheet_directory'); ?>/scripts/jquery-1.3.2.js"></script> 
 <script type="text/javascript" src="<?php bloginfo('stylesheet_directory'); ?>/scripts/chili-1.7.pack.js"></script> 
 <script type="text/javascript" src="<?php bloginfo('stylesheet_directory'); ?>/scripts/jquery.cycle.all.min.js"></script> 
-<script type="text/javascript" src="<?php bloginfo('stylesheet_directory'); ?>/scripts/jquery.easing.1.2.js"></script> 
+<script type="text/javascript" src="<?php bloginfo('stylesheet_directory'); ?>/scripts/jquery.easing.1.2.js"></script>  
+<script type="text/javascript" src="<?php bloginfo('stylesheet_directory'); ?>/scripts/cufon-yui.js"></script> 
+<script type="text/javascript" src="<?php bloginfo('stylesheet_directory'); ?>/scripts/YDIPaintL_400.font.js"></script> 
 
 <?php $theme_options = get_option('Grace'); ?>
 
 
 
 <script type="text/javascript"> 
+Cufon.replace('h1');
+Cufon.replace('h2');
+
 <?php if ( !is_single() ) : ?> 
 
 <?php if (!isset($theme_options["galleryspeed"]) || $theme_options["galleryspeed"] == "default") { $speed = 4000; } else if (!isset($theme_options["galleryspeed"]) || $theme_options["galleryspeed"] == "fast") { $speed = 2000; } else if (!isset($theme_options["galleryspeed"]) || $theme_options["galleryspeed"] == "slow") { $speed = 8000; } ?>

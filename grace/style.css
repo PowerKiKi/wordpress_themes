@@ -27,7 +27,6 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 	outline: 0;
 	font-weight: inherit;
 	font-style: inherit;
-	font-size: 100%;
 	font-family: arial, sans-serif;
 	vertical-align: baseline;
 	}
@@ -38,10 +37,9 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 	}
 
 body {
-	line-height: 1;
+
 	color: #333;
 	background: white;
-	font-size: 62.5%; /* Sets 1em to 10px */
 	font-family: 'Lucida Grande', arial, verdana, sans-serif;
 	}
 
@@ -73,7 +71,6 @@ blockquote, q {
 
 h1, h2, h3 {
 	font-family: georgia, times new roman, serif;
-	font-size: 1.8em;
 	font-style: italic;
 	margin-bottom: 20px;
 	padding-bottom: 8px;
@@ -81,12 +78,8 @@ h1, h2, h3 {
 	font-weight: normal;
 }
 
-h3 {
-	font-size: 1.6em;
-}
-
 h1.single {
-	font-size: 2.4em;
+	
 	font-weight: normal;
 }
 
@@ -109,12 +102,13 @@ h3.single {
 }
 
 #blogTitle h1 {
-	font-size: 1.8em;
+	font-size: 3em;
 	color: #fff;
 	text-transform: uppercase;
 }
 
 #blogTitle h1 a {
+	
 	font-family: georgia, times new roman, serif;
 	color: #fff;
 	text-transform: uppercase;
@@ -122,30 +116,19 @@ h3.single {
 }
 
 #blogTitle h2 {
-	font-size: 1.8em;
+	font-size: 1.2em;
+	
 	color: #000;
 	text-transform: lowercase;
 	padding-bottom: 10px;
 }
 
 p {
-	font-size:1.1em;
+	font-size: 0.8em;
 	margin-bottom: 12px;
-	line-height: 1.9em;
+	line-height: 1.5em;
 }
 
-#columnright p
-{
-	font-size:1.2em;
-}
-
-ul, ol {
-	font-size:1.1em;
-}
-
-li h2 {
-	font-size: 1.6em;
-}
 
 li.widget {
 	margin-bottom: 2.4em;
@@ -160,7 +143,7 @@ li.widget {
 }
 
 .page_item .page_item {
-	font-size: 1em;
+	
 	margin-left: 10px;
 }
 
@@ -253,6 +236,12 @@ body {
 	width: 250px;
 }
 
+#columnleft p,
+#columnleft ul li.widget li
+{
+	font-size: 11px;
+}
+
 #columnright {
 	margin-top: 50px;
 	float: left;
@@ -328,7 +317,7 @@ ul#latestworkgallery li span {
 	background: #ddd url(images/thumbnail-footer.jpg) 0 0 no-repeat;
 	text-indent: 30px;
 	font-weight: bold;
-	font-size: 1.2em;
+	
 	}
 	
 	
@@ -424,7 +413,7 @@ ol.commentlist li div.comment-author {}
 ol.commentlist li div.vcard { font-weight: normal; }
 
 ol.commentlist li div.vcard cite.fn { 
-	font-size: 1.8em;
+	
 	font-family: georgia, times new roman, serif;
 	font-style:normal;
 	}
@@ -446,7 +435,7 @@ ol.commentlist li div.commentmetadata {
 	}
 
 ol.commentlist li div.comment-meta { 
-	font-size:10px; 
+	 
 	}
 
 ol.commentlist li div.comment-meta a { 
@@ -454,12 +443,12 @@ ol.commentlist li div.comment-meta a {
 	}
 
 ol.commentlist li p { 
-	font-size:11px; 
+	 
 	margin:0 0 1em; 
 	}
 
 ol.commentlist li ul { 
-	font-size:1em; 
+	 
 	list-style:square; 
 	margin:0 0 1em 2em; 
 	}
@@ -526,7 +515,7 @@ ol.commentlist li.pingback {
 	float: left;
 	border: 1px solid #444;
 	padding: 4px 2px;
-	font-size: 1.1em;
+	
 	width: 140px;
 	margin-right: 10px;
 }
@@ -562,4 +551,9 @@ a.rss
 	padding-left: 20px;
 	display: inline-block;
 	min-height: 16px;
+}
+
+.gallery-caption
+{
+	font-size: 10px;
 }
