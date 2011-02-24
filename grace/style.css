@@ -547,6 +547,7 @@ ol.commentlist li.pingback {
 	
 a.rss
 {
+	margin-top: 5px;
 	background: url('images/feed.png') no-repeat 0 50%;
 	padding-left: 20px;
 	display: inline-block;
