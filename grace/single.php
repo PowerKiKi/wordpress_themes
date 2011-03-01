@@ -48,7 +48,9 @@
 		 echo get_the_tag_list('<p>',' ','</p>');
 		}
 		?>
-	
+		<ul class="single_widgets">
+			<?php if (function_exists('dynamic_sidebar')) dynamic_sidebar('Single'); ?>
+		</ul>
 	</div> <!-- columnleft -->
 	
 	<div id="columnright"> <!-- columnright -->
