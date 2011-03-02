@@ -1,0 +1,566 @@
+/*
+Theme Name: Grace
+Theme URI: http://7879designs.co.uk/demo/gracephotoblogtheme
+Description: The Grace Photoblog theme by <a href="http://7879designs.co.uk/" title="UK WordPress Specialists">7879 Designs</a>.
+Version: 1.2
+Author: 7879 Designs
+Author URI: http://7879designs.co.uk/
+Tags: brown, black, photoblogging, fixed-width, two-columns, threaded-comments, sticky-post
+
+	The CSS, XHTML and design is released under GPL:
+	http://www.opensource.org/licenses/gpl-license.php
+
+
+
+Eric Meyers Reloaded CSS Reset
+
+http://meyerweb.com/eric/thoughts/2007/05/01/reset-reloaded/
+
+*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-weight: inherit;
+	font-style: inherit;
+	font-family: arial, sans-serif;
+	vertical-align: baseline;
+	}
+
+/* remember to define focus styles! */
+:focus {
+	outline: 0;
+	}
+
+body {
+
+	color: #333;
+	background: white;
+	font-family: 'Lucida Grande', arial, verdana, sans-serif;
+	}
+
+ol, ul {
+	list-style: none;
+	}
+
+/* tables still need 'cellspacing="0"' in the markup */
+table {
+	border-collapse: separate;
+	border-spacing: 0;
+	}
+
+caption, th, td {
+	text-align: left;
+	font-weight: normal;
+	}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: "";
+	}
+
+blockquote, q {
+	quotes: "" "";
+	}
+	
+/* Font Controls */	
+
+h1, h2, h3 {
+	font-family: georgia, times new roman, serif;
+	font-style: italic;
+	margin-bottom: 20px;
+	padding-bottom: 8px;
+	border-bottom: 1px solid #333;
+	font-weight: normal;
+}
+
+h1.single {
+	
+	font-weight: normal;
+}
+
+h2.meta {
+	border-bottom: none;
+	margin-top: 20px;
+	margin-bottom: 0px;
+}
+
+h3.single {
+	padding-top: 8px;
+}
+
+#blogTitle h1, #blogTitle h2 {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-style: normal;
+	font-weight: normal;
+}
+
+#blogTitle h1 {
+	font-size: 3em;
+	color: #fff;
+	text-transform: uppercase;
+}
+
+#blogTitle h1 a {
+	
+	font-family: georgia, times new roman, serif;
+	color: #fff;
+	text-transform: uppercase;
+	text-decoration: none;
+}
+
+#blogTitle h2 {
+	font-size: 1.2em;
+	
+	color: #000;
+	text-transform: lowercase;
+	padding-bottom: 10px;
+}
+
+p {
+	font-size: 0.8em;
+	margin-bottom: 12px;
+	line-height: 1.5em;
+}
+
+
+li.widget {
+	margin-bottom: 2.4em;
+}
+
+.textwidget {
+	line-height: 1.9em;
+}
+
+.page_item {
+	margin-bottom: 2px;
+}
+
+.page_item .page_item {
+	
+	margin-left: 10px;
+}
+
+a {
+	color: #333;
+	text-decoration: underline;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+p.postnavigation a, p.postnavigation a:hover {
+	text-decoration: none;
+}
+
+strong {
+	font-weight: bold;
+}
+
+em {
+	font-style: italic;
+}
+
+.hidden {
+	display: none;
+}
+	
+/*
+
+Structure Controls
+
+*/
+
+body {
+	background: #ccc1ba url(images/body-bg-brown.jpg) 0 0 repeat;
+	text-align: center;
+}
+
+#header {
+	width: 1100px;
+	background: transparent url(images/header-bg.png) 0 0 no-repeat;
+	margin: 0 auto;
+	text-align: left;
+	height: 220px;
+	margin-top:20px;
+}
+
+#logo {
+	float: left;
+	margin:75px 0 0 69px;
+	width: 89px;
+	height: 89px;
+	background: transparent;
+}
+
+#blogTitle {
+	float: left;
+	margin:95px 0 0 20px;
+	width: 800px;
+	height: 89px;
+	background: transparent;
+}
+
+#page {
+	background: #fff url(images/page-bg.jpg) 100% 0 no-repeat;
+	width: 1000px;
+	margin: 0 auto;
+	margin-bottom: 100px;
+	text-align: left;
+}
+
+#content, #footer {
+	margin: 0 50px 50px 50px;
+	padding-top: 50px;
+	background: transparent;
+}
+
+#feature.singlepic, #pagecontent {
+	overflow: hidden;
+}
+
+#feature.singlepic img {
+	text-align: right;
+}
+
+#columnleft {
+	margin-top: 50px;
+	float: left;
+	width: 250px;
+}
+
+#columnleft p,
+#columnleft ul li.widget li
+{
+	font-size: 11px;
+}
+
+#columnright {
+	margin-top: 50px;
+	float: left;
+	margin-left: 50px;
+	width: 600px;
+}
+
+#commentsform {
+	margin-top: 50px;
+}
+
+#footer {
+	border-top: 1px solid #333;
+	padding: 20px 0;
+	text-align: right;
+	font-size: 0.7em;
+}
+
+/* Image Cycle Styles*/
+ 
+.pics { 
+	height: 506px; 
+	width: 900px; 
+	padding:0; 
+	margin:0; 
+	overflow: hidden;
+	margin-bottom: 50px;
+	}
+	
+.pics img { 
+	top:0; 
+	left:0;
+	border:0;
+	padding:0; 
+	vertical-align: middle;
+	}
+	
+/* General Image Controls */	
+
+.alignright {
+	float: right;
+	}
+
+.alignleft {
+	float: left
+	}
+	
+.aligncenter, div.aligncenter {
+   display: block;
+   margin-left: auto;
+   margin-right: auto;
+}	
+	
+
+/* Lists */
+
+ul#latestworkgallery {
+	margin: 0;
+}	
+	
+ul#latestworkgallery li {
+	width: 280px;
+	margin: 0px 40px 20px 0;
+	float: left;
+}
+
+ul#latestworkgallery li.alt {
+	margin-right: 0px
+}
+
+ul#latestworkgallery li span {
+	display: block;
+	padding: 6px 2px;
+	background: #ddd url(images/thumbnail-footer.jpg) 0 0 no-repeat;
+	text-indent: 30px;
+	font-weight: bold;
+	
+	}
+	
+	
+/* Button Styles */	
+
+p.morebutton {
+	width: 99px;
+	height: 30px;
+}
+
+.morebutton a {
+	background: transparent url(images/see-more-button.png) 0 0 no-repeat;
+	width: 99px;
+	height: 30px;
+	border: 0;
+	display: block;
+}
+
+.morebutton a:hover {
+	background-position: 0 -30px;
+	cursor: pointer;
+}
+
+.previouspostbutton, .nextpostbutton {
+	float: left;
+	display: block;
+}
+
+.previouspostbutton {
+ 	margin-right: 10px;
+ }
+
+.previouspostbutton a, a .previouspostbutton  {
+	background: transparent url(images/previous-post-button.png) 0 0 no-repeat;
+	width: 99px;
+	height: 30px;
+	border: 0;
+	display: block;
+}
+
+.previouspostbutton a:hover, a:hover .previouspostbutton {
+	background-position: 0 -30px;
+	cursor: pointer;
+}
+
+.nextpostbutton a, a .nextpostbutton {
+	background: transparent url(images/next-post-button.png) 0 0 no-repeat;
+	width: 99px;
+	height: 30px;
+	border: 0;
+	display: block;
+}
+
+.nextpostbutton a:hover, a:hover .nextpostbutton {
+	background-position: 0 -30px;
+	cursor: pointer;
+}
+	
+/* Comments Form */	
+
+#respond {
+	margin-top: 30px;
+}
+
+#commentform #submit {
+	background: transparent url(images/submit-button.png) 0 0 no-repeat;
+	width: 99px;
+	height: 30px;
+	border: 0;
+}
+
+#commentform #submit:hover {
+	background: transparent url(images/submit-button.png) 0 -30px no-repeat;
+	cursor: pointer;
+}
+
+/* Comments */
+
+ol.commentlist { 
+	list-style:none; 
+	margin:0 0 1em; 
+	padding:0; 
+	text-indent:0; 
+	}
+
+ol.commentlist li.comment { 
+	border-bottom:1px solid #9e9690; 
+	padding:1em; 
+	}
+
+ol.commentlist li div.comment-author {}
+
+ol.commentlist li div.vcard { font-weight: normal; }
+
+ol.commentlist li div.vcard cite.fn { 
+	
+	font-family: georgia, times new roman, serif;
+	font-style:normal;
+	}
+
+ol.commentlist li div.vcard cite.fn a.url {}
+
+ol.commentlist li div.vcard img.avatar { 
+	border:1px solid #333; 
+	float:right; 
+	margin:0 0 1em 1em; 
+	}
+
+ol.commentlist li div.vcard span.says {
+	margin-bottom: 12px;
+	}
+
+ol.commentlist li div.commentmetadata {
+	margin-bottom: 20px;
+	}
+
+ol.commentlist li div.comment-meta { 
+	 
+	}
+
+ol.commentlist li div.comment-meta a { 
+	color:#9e9690; 
+	}
+
+ol.commentlist li p { 
+	 
+	margin:0 0 1em; 
+	}
+
+ol.commentlist li ul { 
+	 
+	list-style:square; 
+	margin:0 0 1em 2em; 
+	}
+
+ol.commentlist li div.reply { 
+	margin-top: 20px;
+	color: transparent; 
+	}
+
+ol.commentlist li div.reply a { 
+	background: transparent url(images/reply-button.png) 0 0 no-repeat;
+	width: 83px;
+	height: 25px;
+	border: 0;
+	display: block;
+	color: transparent;
+	}
+	
+ol.commentlist li div.reply a:hover { 
+	background-position: 0 -25px;
+	}	
+
+ol.commentlist li ul.children { 
+	list-style:none; 
+	margin:1em 0; 
+	text-indent:0; 
+	}
+
+ol.commentlist li ul.children li.depth-2 { 
+	border-left:3px solid #333; 
+	margin:.25em 0 .25em .25em; 
+	}
+
+ol.commentlist li ul.children li.depth-3 { 
+	border-left:3px solid #9e9690; 
+	margin:.25em 0 .25em .25em; 
+	}
+
+ol.commentlist li ul.children li.depth-4 { 
+	border-left:3px solid #bbb; 
+	margin:.25em 0 .25em .25em; 
+	}
+
+ol.commentlist li.even { 
+	background:#fff; 
+	}
+
+ol.commentlist li.odd { 
+	background:#f6f6f6; 
+	}
+
+ol.commentlist li.parent { 
+	border-left:3px solid #111; 
+	}
+
+ol.commentlist li.pingback { 
+	border-bottom:1px dotted #666; 
+	padding:1em; 
+	}
+	
+/* Search Contorls*/	
+
+#searchform #s {
+	float: left;
+	border: 1px solid #444;
+	padding: 4px 2px;
+	
+	width: 140px;
+	margin-right: 10px;
+}
+
+#searchsubmit {
+	float: left;
+	background: transparent url(images/search-button.png) 0 0 no-repeat;
+	width: 83px;
+	height: 25px;
+	border: 0;
+	display: block;
+	color: transparent;	
+	}
+	
+#searchsubmit:hover {
+	background-position: 0 -25px;
+	cursor: pointer;
+}	
+
+/* General Controls*/
+
+.clearall {
+	clear: both;
+}
+
+.wp-caption {
+	display: none;
+	}
+	
+a.rss
+{
+	margin-top: 5px;
+	background: url('images/feed.png') no-repeat 0 50%;
+	padding-left: 20px;
+	display: inline-block;
+	min-height: 16px;
+}
+
+.gallery-caption
+{
+	font-size: 10px;
+}
+
+.single_widgets
+{
+	margin-top: 5em;
+}
