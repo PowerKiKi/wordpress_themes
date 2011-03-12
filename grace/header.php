@@ -5,14 +5,16 @@
 <meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>" />
 
 <title><?php wp_title('&laquo;', true, 'right'); ?> <?php bloginfo('name'); ?></title>
+<?php 
+if ( is_singular() ) wp_enqueue_script( 'comment-reply' );
+wp_enqueue_script('jquery');
+wp_head();
+?>
 
 <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="screen" />
 <link rel="alternate" type="application/rss+xml" title="<?php bloginfo('name'); ?> RSS Feed" href="<?php bloginfo('rss2_url'); ?>" />
 <link rel="alternate" type="application/atom+xml" title="<?php bloginfo('name'); ?> Atom Feed" href="<?php bloginfo('atom_url'); ?>" />
-<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
-
-<script type="text/javascript" src="<?php bloginfo('stylesheet_directory'); ?>/scripts/jquery-1.3.2.js"></script> 
-<script type="text/javascript" src="<?php bloginfo('stylesheet_directory'); ?>/scripts/chili-1.7.pack.js"></script> 
+<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" /> 
 <script type="text/javascript" src="<?php bloginfo('stylesheet_directory'); ?>/scripts/jquery.cycle.all.min.js"></script> 
 <script type="text/javascript" src="<?php bloginfo('stylesheet_directory'); ?>/scripts/jquery.easing.1.2.js"></script>  
 <script type="text/javascript" src="<?php bloginfo('stylesheet_directory'); ?>/scripts/cufon-yui.js"></script> 
@@ -20,25 +22,24 @@
 
 <?php $theme_options = get_option('Grace'); ?>
 
-
-
 <script type="text/javascript"> 
 Cufon.replace('h1');
 Cufon.replace('h2');
 
 <?php if ( !is_single() ) : ?> 
 
-<?php if (!isset($theme_options["galleryspeed"]) || $theme_options["galleryspeed"] == "default") { $speed = 4000; } else if (!isset($theme_options["galleryspeed"]) || $theme_options["galleryspeed"] == "fast") { $speed = 2000; } else if (!isset($theme_options["galleryspeed"]) || $theme_options["galleryspeed"] == "slow") { $speed = 8000; } ?>
-$(function() {
-    $('#feature').cycle({
+<?php
+if (!isset($theme_options["galleryspeed"]) || $theme_options["galleryspeed"] == "default") { $speed = 4000; } else if (!isset($theme_options["galleryspeed"]) || $theme_options["galleryspeed"] == "fast") { $speed = 2000; } else if (!isset($theme_options["galleryspeed"]) || $theme_options["galleryspeed"] == "slow") { $speed = 8000; } ?>
+jQuery(function() {
+	jQuery('#feature').cycle({
         speed:       1000,
         timeout:     <?php echo $speed; ?>
     });
 });
  
 <?php else: ?>
-$(function() {
-    $('#feature').cycle({
+jQuery(function() {
+	jQuery('#feature').cycle({
         timeout:     0,
         pagerEvent: 'mouseenter',
         pagerAnchorBuilder: function(idx, slide) { 
@@ -48,10 +49,7 @@ $(function() {
     });
 });
 <?php endif; ?>
-</script> 
-
-<?php if ( is_singular() ) wp_enqueue_script( 'comment-reply' ); ?>
-<?php wp_head(); ?>
+</script>
 </head>
 <body>
 

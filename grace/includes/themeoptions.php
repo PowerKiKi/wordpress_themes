@@ -2,7 +2,6 @@
 class Panel {
 	var $default_settings = Array(
 	    'galleryspeed' => 'default',
-	    'autothumb' => 'timthumbon',
 	);
 
 	function Panel() {
@@ -25,16 +24,7 @@ class Panel {
     		if (isset($_POST['galleryspeed_act2'])) {
     			$this->options['galleryspeed'] = $_POST['galleryspeed_act2'];
     		}
-    		else { $this->options['colorscheme'] = 'default'; }
-    		
-    		
-    		if (isset($_POST['autothumb_act2'])) {
-    			$this->options['autothumb'] = $_POST['autothumb_act2'];
-    		}
-    		else { $this->options["autothumb"] = "timthumbon"; }
-    		
     		update_option('Grace', $this->options);
-			
 	}
 ?>
 
@@ -62,19 +52,6 @@ class Panel {
 				<option value="slow" <?php if ($this->options["galleryspeed"] == "slow") { echo "selected"; }?>>Slow</option>
 
 			  </select>
-                </td>
-            </tr>
-            <!-- -->
-            <tr>
-                <td>
-                    <strong>Automatic Thumbnails</strong><br />
-                    Select whether to use automatic thumbnails. By default these are switched on.
-                </td>
-                <td>
-                    <select name="autothumb_act2" id="autothumb_act2">
-                        <option value="timthumbon" <?php if ($this->options["autothumb"] == "timthumbon") { echo "selected"; }?>>Auto Thumbnails On</option>
-                        <option value="timthumboff" <?php if ($this->options["autothumb"] == "timthumboff") { echo "selected"; }?>>Auto Thumbnails Off</option>
-                    </select>
                 </td>
             </tr>
         </tbody>

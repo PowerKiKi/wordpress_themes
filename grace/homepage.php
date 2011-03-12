@@ -11,19 +11,16 @@ get_header(); ?>
 	<?php
 		
 		$catID = get_cat_id('Featured'); // Get the category ID for the Featured category used to display rotating images on homepage
-
 		query_posts('cat='.$catID.''); // Retrieve the latest post from the Featured category
 
-	  	if (have_posts()) : while (have_posts()) : the_post(); // Start the Featured loop
-		
-			$image = grace_get_featured_image($post);
-			$imageTag = wp_get_attachment_image($image->ID, 'original', false, array('id' => 'attachment_' . $image->post_name, 'title' => the_title_attribute(array('echo' => false))));
-			?>
-			<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php echo $imageTag; ?></a>
-			<?php
-		
-		endwhile; endif; // End the Featured loop
-
+	  	if (have_posts())
+	  	{
+	  		while (have_posts()) 
+		  	{
+		  		the_post(); // Start the Featured loop
+				if (has_post_thumbnail()) the_post_thumbnail('full', array('title' => ''));
+		  	}
+	  	}
 	?>
 	
 	</div> <!-- feature -->
