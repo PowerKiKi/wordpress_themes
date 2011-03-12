@@ -43,9 +43,20 @@ body {
 	font-family: 'Lucida Grande', arial, verdana, sans-serif;
 	}
 
-ol, ul {
+#columnright ol, #columnright ul
+{
+	font-size: 0.8em;
+}
+#columnright ol ol, #columnright ul ul
+{
+	font-size: 1em;
 	list-style: none;
-	}
+	padding-left: 0em;
+}
+#columnright ul
+{
+	padding-left: 1em;
+}
 
 /* tables still need 'cellspacing="0"' in the markup */
 table {
@@ -129,9 +140,16 @@ p {
 	line-height: 1.5em;
 }
 
-
-li.widget {
+li.widget
+{
 	margin-bottom: 2.4em;
+}
+
+ul#latestworkgallery li,
+li.widget,
+.widget li
+{
+	list-style: none;
 }
 
 .textwidget {
