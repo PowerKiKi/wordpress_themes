@@ -5,7 +5,7 @@ $cpanel = new Panel();
 
 if ( function_exists( 'add_theme_support' ) ) { 
 	add_theme_support( 'post-thumbnails' );
-	set_post_thumbnail_size( 280, 140, true);
+	set_post_thumbnail_size( 280, 158);
 	add_filter( 'post_thumbnail_html', 'my_post_image_html', 10, 3 );
 	
 	function my_post_image_html( $html, $post_id, $post_image_id ) {
