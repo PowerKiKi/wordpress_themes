@@ -409,6 +409,11 @@ p.morebutton {
 	border: 0;
 }
 
+#commentform #comment
+{
+	width: 100%;
+}
+
 #commentform #submit:hover {
 	background: transparent url(images/submit-button.png) 0 -30px no-repeat;
 	cursor: pointer;
