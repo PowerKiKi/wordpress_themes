@@ -498,17 +498,14 @@ ol.commentlist li ul.children {
 	}
 
 ol.commentlist li ul.children li.depth-2 { 
-	border-left:3px solid #333; 
 	margin:.25em 0 .25em .25em; 
 	}
 
 ol.commentlist li ul.children li.depth-3 { 
-	border-left:3px solid #9e9690; 
 	margin:.25em 0 .25em .25em; 
 	}
 
 ol.commentlist li ul.children li.depth-4 { 
-	border-left:3px solid #bbb; 
 	margin:.25em 0 .25em .25em; 
 	}
 
@@ -518,10 +515,6 @@ ol.commentlist li.even {
 
 ol.commentlist li.odd { 
 	background:#f6f6f6; 
-	}
-
-ol.commentlist li.parent { 
-	border-left:3px solid #111; 
 	}
 
 ol.commentlist li.pingback { 
