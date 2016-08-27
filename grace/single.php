@@ -60,7 +60,7 @@
 	  <p><?php the_content(); ?></p>
 	
 	  <div id="commentsform"> <!-- commentsform -->
-	  <?php comments_template(); ?>
+	  <?php //comments_template(); ?>
 	  </div> <!-- commentsform -->
 
 	</div> <!-- columnright -->
